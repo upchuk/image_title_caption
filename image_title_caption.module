@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\Component\Utility\String;
+
+/**
+ * Implements hook_theme().
+ */
+function image_title_caption_theme() {
+  return array(
+    'image_title_caption_formatter' => array(
+      'variables' => array('item' => NULL, 'item_attributes' => NULL, 'url' => NULL, 'image_style' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements template_preprocess_image_title_caption_formatter().
+ */
+function template_preprocess_image_title_caption_formatter(&$vars) {
+  template_preprocess_image_formatter($vars);
+  $vars['caption'] = String::checkPlain($vars['item']->get('title')->getValue());
+}

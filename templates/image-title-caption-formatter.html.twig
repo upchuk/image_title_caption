@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a formatted image field with its title as a caption.
+ *
+ * Available variables:
+ * - image: A collection of image data.
+ * - image_style: An optional image style.
+ * - url: An optional URL the image can be linked to.
+ * - caption: The image title to be used as a caption
+ *
+ * @see template_preprocess_image_title_caption_formatter()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if url %}
+  <a href="{{ url }}">{{ image }}</a>
+{% else %}
+  {{ image }}
+{% endif %}
+{% if caption %}
+  <div class="image-caption">{{ caption }}</div>
+{% endif %}
+

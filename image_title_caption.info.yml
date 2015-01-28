@@ -1,0 +1,6 @@
+name: Image title caption
+type: module
+description: Uses the image title field as a caption
+core: 8.x
+dependencies:
+  - image

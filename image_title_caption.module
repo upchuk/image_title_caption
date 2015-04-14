@@ -1,6 +1,6 @@
 <?php
 
-use Drupal\Component\Utility\String;
+use Drupal\Component\Utility\SafeMarkup;
 
 /**
  * Implements hook_theme().
@@ -18,5 +18,5 @@ function image_title_caption_theme() {
  */
 function template_preprocess_image_title_caption_formatter(&$vars) {
   template_preprocess_image_formatter($vars);
-  $vars['caption'] = String::checkPlain($vars['item']->get('title')->getValue());
+  $vars['caption'] = SafeMarkup::checkPlain($vars['item']->get('title')->getValue());
 }

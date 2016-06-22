@@ -26,8 +26,8 @@ class ImageTitleCaption extends ImageFormatter {
   /**
    * {@inheritdoc}
    */
-  public function viewElements(FieldItemListInterface $items) {
-    $elements = parent::viewElements($items);
+  public function viewElements(FieldItemListInterface $items, $langcode) {
+    $elements = parent::viewElements($items, $langcode);
     foreach ($elements as &$element) {
       $element['#theme'] = 'image_title_caption_formatter';
     }
